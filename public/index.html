@@ -25,6 +25,30 @@
             <img src="images/pexels-pixabay-208806.jpg" alt="Pixabay" loading="lazy">
             <img src="images/pexels-pixabay-257577.jpg" alt="Pixabay" loading="lazy">
         </div>
+
+        <p>
+            Latitude: <span id="latitude"></span>&deg<br>
+            Longitude: <span id="longitude"></span>&deg<br>
+        </p>
     </main>
+
+    <script>
+        if ("geolocation" in navigator) {
+            console.log('geolocation is available!');
+            navigator.geolocation.getCurrentPosition((position) => {
+                // console.log(position.coords);
+                // console.log(position.coords);
+
+                console.log(position);
+
+                const lat = position.coords.latitude;
+                document.getElementById('latitude').textContent = lat;
+                const lon = position.coords.longitude;
+                document.getElementById('longitude').textContent = lon;
+            });
+        } else {
+            console.log('geolocation is NOT available!')
+        }
+    </script>
 </body>
 </html>
