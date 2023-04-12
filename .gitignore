@@ -1,0 +1,2 @@
+# ingnore node modules when pushing to remote repository
+node_modules/
